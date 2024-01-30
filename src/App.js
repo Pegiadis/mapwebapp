@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import TopBar from './components/TopBar'; // Assuming TopBar is in the same directory
+import LeftSidePanel from './components/LeftSidePanel'; // Import the new LeftSidePanel component
+import BurgerMenu from './components/BurgerMenu'; // Import the new BurgerMenu component
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div className="flex">
+          <BurgerMenu /> {/* Render the burger menu */}
+            <div className="flex-1">
+                <TopBar />
+                {/* Rest of your application */}
+            </div>
+        </div>
+    );
+};
 
 export default App;
