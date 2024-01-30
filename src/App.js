@@ -1,16 +1,17 @@
-import React from 'react';
-import TopBar from './components/TopBar'; // Assuming TopBar is in the same directory
-import LeftSidePanel from './components/LeftSidePanel'; // Import the new LeftSidePanel component
-import BurgerMenu from './components/BurgerMenu'; // Import the new BurgerMenu component
+import React, { useState } from 'react';
+import TopBar from './components/TopBar'; // make sure the path is correct
+import BurgerMenu from './components/BurgerMenu'; // make sure the path is correct
 
 const App = () => {
+    const [isPanelOpen, setIsPanelOpen] = useState(false);
+
+    const togglePanel = () => setIsPanelOpen(!isPanelOpen);
+
     return (
-        <div className="flex">
-          <BurgerMenu /> {/* Render the burger menu */}
-            <div className="flex-1">
-                <TopBar />
-                {/* Rest of your application */}
-            </div>
+        <div className="App">
+            <TopBar togglePanel={togglePanel} />
+            <BurgerMenu isPanelOpen={isPanelOpen} togglePanel={togglePanel} />
+            {/* Rest of your application */}
         </div>
     );
 };
