@@ -22,7 +22,7 @@ const TopBar = ({ setCurrentPage }) => {
                 <button onClick={() => setCurrentPage('menu')} className="text-white p-2 lg:hidden">
                     <GiHamburgerMenu size={24} />
                 </button>
-                <span className="text-white text-xl font-semibold hidden lg:block">ePIgnosis</span>
+                <span className="text-white text-xl font-semibold hidden lg:block">ePignosis</span>
             </div>
             <div className="flex overflow-x-auto scrollbar-hide">
                 {buttons.map((button, index) => (
