@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import TopBar from './components/TopBar';
-import LeftSidebar from './components/Layout/TwoSidebars/LeftSidebar';
-import RightSidebar from './components/Layout/TwoSidebars/RightSidebar';
-import Map from './components/Map';
+import TopBar from './components/Layout/Sidebars/TopBar';
+import LeftSidebar from './components/Layout/Sidebars/LeftSidebar';
+import RightSidebar from './components/Layout/Sidebars/RightSidebar';
+import Map from './components/pages/Map';
 import Chartography from './components/pages/Chartography';
+import InteractiveMap from "./components/pages/InteractiveMap";
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('map');
@@ -27,6 +28,16 @@ const App = () => {
         );
       case 'chartography':
         return <Chartography filter={selectedFilter} />;
+      case 'interactiveMap':
+        return (
+            <div className="flex h-full">
+              <LeftSidebar onFilterChange={handleFilterChange} />
+              <div className="flex-grow">
+                <InteractiveMap />
+              </div>
+              <RightSidebar />
+            </div>
+        );
       default:
         return null;
     }
