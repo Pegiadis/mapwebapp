@@ -23,7 +23,7 @@ const TopBar = ({ setCurrentPage }) => {
                     <GiHamburgerMenu size={24} />
                 </button>
                 <span className="text-white text-xl font-semibold hidden lg:flex items-center">
-                    <img src="/oiko_logo.png" alt="Logo" className="mr-2" width="140" height="40" /> ePignosis
+                    <img src="" alt="Your Logo" className="mr-2" width="140" height="40" />
                 </span>
             </div>
             <div className="flex overflow-x-auto scrollbar-hide">

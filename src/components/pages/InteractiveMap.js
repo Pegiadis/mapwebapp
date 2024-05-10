@@ -20,14 +20,14 @@ const InteractiveMap = () => {
                 setActiveMarker(e.latlng);
             },
         });
-        return null; // Since we're not adding a layer, we just return null.
+        return null;
     };
 
     return (
         <MapContainer center={[39.0742, 21.8243]} zoom={6} className="h-full w-full">
             <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+                attribution='&copy; contributors of OpenTopoMap (CC-BY-SA)'
             />
             <MapClickHandler />
             {activeMarker && (
